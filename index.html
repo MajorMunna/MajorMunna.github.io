@@ -175,17 +175,17 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 
 <script>
 var labs=[
-{t:"Ethical Hacking & VAPT",i:"Finding weaknesses in authorized targets, proving them, and reporting them clearly.",k:"var(--red)",ic:"kali",l:[
+{t:"Offensive Security & VAPT",i:"Finding weaknesses in authorized targets, proving them, and reporting them clearly.",k:"var(--red)",ic:"kali",l:[
 ["Network Reconnaissance & Enumeration",["Host discovery in an authorized lab","Open ports and service enumeration","DNS, IP and domain information collection","Asset inventory built from the findings"],"nm",["Nmap","SpiderFoot","Kali Linux"]],
 ["Vulnerability Assessment & VAPT Reporting",["Lab target scanning and vulnerability validation","CVE, CVSS and potential impact analysis","False positive checks","Report with evidence, remediation and executive summary"],"nes",["Nessus","OpenVAS","Nikto"]],
 ["Web Application Penetration Testing",["Authentication and access-control testing","Controlled SQL injection and XSS testing","Request and response analysis","Reproducing vulnerabilities and verifying fixes"],"burp",["Burp Suite","OWASP ZAP","SQLmap"]],
 ["API Security Testing",["Authentication and authorization checks","Input validation and error handling","Rate limiting and access-control checks","Structured report of API findings"],"pm",["Postman","Burp Suite"]],
 ["Safe Malware Analysis",["Benign samples and safe training artifacts only","Hash, strings and file metadata inspection","Static-analysis report","Detection indicators and defensive recommendations"],"sf",["Kali Linux","Python"]]]},
-{t:"SOC & Blue Team",i:"Monitoring Windows and Linux systems, detecting suspicious activity, and investigating it.",k:"var(--accent)",ic:"waz",l:[
+{t:"Defensive Operations (SOC)",i:"Monitoring Windows and Linux systems, detecting suspicious activity, and investigating it.",k:"var(--accent)",ic:"waz",l:[
 ["SIEM Monitoring & Alert Investigation",["Wazuh SIEM installation and agent deployment","Windows and Linux security log collection","Suspicious and repeated failed login detection","Alert investigation and incident report"],"waz",["Wazuh","Ubuntu"]],
 ["File Integrity Monitoring & Malware Detection",["File creation, modification and deletion detection","Hash verification and VirusTotal integration","Active Response configuration and troubleshooting","Testing the workflow from alert to remediation"],"jtr",["Wazuh","VirusTotal"]],
 ["Incident Response Investigation",["Timeline of a sample security incident","Log correlation and suspicious activity analysis","Severity, containment and recovery plan","Incident report and lessons learned"],"zap",["Wazuh","Python"]]]},
-{t:"Network Engineering & Infrastructure Security",i:"Designing, segmenting and securing networks on Cisco and MikroTik.",k:"var(--muted)",ic:"gns",l:[
+{t:"Network Infrastructure Security",i:"Designing, segmenting and securing networks on Cisco and MikroTik.",k:"var(--muted)",ic:"gns",l:[
 ["Enterprise Network Design",["Multiple VLANs and inter-VLAN routing","OSPF routing and network segmentation","Traffic restrictions with ACLs","NAT, DHCP and connectivity troubleshooting"],"pt",["Packet Tracer","GNS3"]],
 ["MikroTik Firewall & Secure Network",["Firewall filter and address-list rules","NAT, SSH management and secure administration","Guest network isolation","Logging and rule verification"],"chr",["MikroTik CHR","WinBox"]],
 ["Network Segmentation & Firewall Testing",["Separate user, server and management networks","Allow and deny policy design","Approved connectivity tests","Network diagram and security rationale"],"ws",["GNS3","Wireshark"]]]}];
@@ -214,9 +214,9 @@ pm:'<path d="M21 3L3 11l7 3 3 7z"/><path d="M10 14l11-11"/>',
 nm:'<circle cx="10" cy="10" r="6"/><path d="M4 10h12M10 4c2 2 2 8 0 12M15 15l6 6"/>',
 ub:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="1.6"/><circle cx="5" cy="16" r="1.6"/><circle cx="19" cy="16" r="1.6"/>'};
 var tools=[
-{t:"Cybersecurity",l:[["Kali Linux","kali"],["Nmap","nm"],["Greenbone / OpenVAS","ov"],["Nessus","nes"],["Burp Suite","burp"],["OWASP ZAP","zap"],["SpiderFoot","sf"],["SQLmap","sql"],["Hydra","hyd"],["Crunch","cru"],["Metasploit Framework","msf"],["Nikto","nik"],["Hashcat","hc"],["John the Ripper","jtr"],["Steghide","sh"]]},
-{t:"SOC, SIEM & Blue Team",l:[["Wazuh","waz"],["Python","py"],["Postman","pm"],["Ubuntu","ub"]]},
-{t:"Networking",l:[["Cisco Packet Tracer","pt"],["GNS3","gns"],["WinBox","wb"],["Wireshark","ws"],["MikroTik CHR","chr"]]}];
+{t:"Penetration Testing",l:[["Kali Linux","kali"],["Nmap","nm"],["Greenbone / OpenVAS","ov"],["Nessus","nes"],["Burp Suite","burp"],["OWASP ZAP","zap"],["SpiderFoot","sf"],["SQLmap","sql"],["Hydra","hyd"],["Crunch","cru"],["Metasploit Framework","msf"],["Nikto","nik"],["Hashcat","hc"],["John the Ripper","jtr"],["Steghide","sh"]]},
+{t:"SIEM & Security Monitoring",l:[["Wazuh","waz"],["Python","py"],["Postman","pm"],["Ubuntu","ub"]]},
+{t:"Networking & Packet Analysis",l:[["Cisco Packet Tracer","pt"],["GNS3","gns"],["WinBox","wb"],["Wireshark","ws"],["MikroTik CHR","chr"]]}];
 function esc(s){return s.replace(/&/g,"&amp;")}
 function own(k){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ic[k]+'</svg>'}
 document.getElementById("labsRoot").innerHTML=labs.map(function(g){return '<div class="lgroup" style="--gc:'+g.k+'"><div class="lhead"><span class="lico big">'+own(g.ic)+'</span><div><h3>'+esc(g.t)+'</h3><p class="gi">'+g.i+'</p></div><span class="cnt2">'+g.l.length+' labs</span></div><div class="labgrid">'+g.l.map(function(x){return '<div class="lab"><div class="lh"><span class="lico">'+own(x[2])+'</span><h4>'+esc(x[0])+'</h4></div><ul>'+x[1].map(function(b){return '<li>'+b+'</li>'}).join("")+'</ul><div class="lt">'+x[3].map(function(t){return '<span>'+t+'</span>'}).join("")+'</div></div>'}).join("")+'</div></div>'}).join("");
